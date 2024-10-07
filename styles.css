@@ -11,26 +11,94 @@
     --clr-gray800: #33354D;
     --clr-gray900: #0B0F19;
 
-    --clr-primary: #6366F1; 
+    --clr-primary: #6366F1;
+
+    --clr-bg: #fff;
+    --clr-bg-100: var(--clr-gray100);
+    --clr-text-body: var(--clr-gray700);
+    --clr-text-heading: var(--clr-gray900);
+    --clr-text-nav: var(--clr-gray800);
+
+    --br-m: 0.375em;
+    --br-l: 0.5em;
+
+    --white-to-gray: #fff;
+
+    --section-spacing: 3rem;
+
 }
 
-*, *::before, *::after {
-padding: 0;
-margin: 0;
-box-sizing: border-box;
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-h1 {
-    color: var(--clr-gray900);
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+    color: var(--clr-text-heading);
     text-align: center;
     font-weight: 800;
-    font-size: 3rem;
+    line-height: 1.3;
+}
+
+.d4 {
+    font-size: 3.5rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+.space-y-2>*+* {
+    margin-top: 2rem;
+}
+
+.space-y-3>*+* {
+    margin-top: 3rem;
+}
+
+.space-y-4>*+* {
+    margin-top: 4rem;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 .p-text {
     color: var(--clr-gray600);
     text-align: center;
     font-size: 18px;
+    padding: 2rem;
+    margin: 0 auto;
 }
 
 img {
@@ -40,15 +108,27 @@ img {
 
 body {
     font-family: "Manrope", system-ui;
+    background-color: var(--clr-bg);
+    color: var(--clr-text-body);
+    line-height: 1.8;
 }
 
 .container {
     width: 100%;
-    margin: 0 auto;
+    margin-inline: auto;
 
     @media (width > 768px) {
         max-width: 720px;
     }
+
+    @media (width > 992px) {
+        max-width: 960px;
+    }
+
+    @media (width > 1200px) {
+        max-width: 1140px;
+    }
+
     @media (width > 1400px) {
         max-width: 1320px;
     }
@@ -62,43 +142,74 @@ body {
 .flex {
     display: flex;
 }
+
 .align-center {
     align-items: center;
 }
 
-.bg-image {
-    background-image: url("/images/a-bg.png");
-    background-color: #fff;
-    height: 500px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
 .btn {
     font-size: .875rem;
+    padding: 6em 1.8em;
+    display: flex;
+    gap: .5rem;
+    text-wrap: nowrap;
     text-decoration: none;
     background-color: transparent;
     border: 0;
     cursor: pointer;
-    padding: .6em 1.5em;
-    border-radius: .3em;
+    border-radius: var(--br-m);
 
-    & > * + * {
+    &>*+* {
         margin-left: .5rem;
     }
 
 }
+
 .btn-primary {
     background-color: var(--clr-primary);
     color: #fff;
 
+    transition: background-color 150ms;
+
+    &:hover,
+    &:focus-visible {
+        background-color: hsl(from --clr-primary) h s calc(1-10);
+    }
+}
+
+.btn-round {
+    display: flex;
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn-white {
+    background-color: var(--white-to-gray);
+    color: var(--clr-text-nav);
+
+    box-shadow: 0 0 10px #00000022, 3px 5px 4px #0000001f;
+
+    &:hover,
+    &:focus-visible {
+        background-color: hsl(from var(--white-to-gray) h s calc(1-10));
+    }
 }
 
 /* NAVBAR */
 .main-nav {
-    padding-block: .7rem;
+    padding-block: 1rem;
+    position: absolute;
+    width: 100%;
+    top: 0;
 }
+
 .main-nav .container {
     justify-content: space-between;
 }
@@ -108,18 +219,17 @@ body {
 }
 
 .nav-link {
-    color: var(--clr-gray800)
-    font-weight: 600;
+    color: var(--clr-gray800) font-weight: 600;
     text-decoration: none;
 }
+
 .nav-link:hover,
 .nav-link:focus-visible {
     color: var(--clr-primary);
 }
 
 .darkmode-switch .text-label {
-    color: var(--clr-gray700)
-    font-weight: 600;
+    color: var(--clr-gray700) font-weight: 600;
 }
 
 .nav-link,
@@ -127,27 +237,26 @@ body {
 .main-nav .btn-primary {
     display: none;
 }
+
 .darkmode-switch {
     gap: 1rem;
 }
 
-/* The switch - the box around the slider */
+/* Taget från W3Schools */
 .switch {
     position: relative;
     display: inline-block;
     width: 46px;
     height: 24px;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
+}
+
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
-  
-  /* The slider */
-  .slider {
+}
+
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -157,9 +266,9 @@ body {
     background-color: var(--clr-gray600);
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  .slider:before {
+}
+
+.slider:before {
     position: absolute;
     content: "";
     height: 20px;
@@ -169,30 +278,29 @@ body {
     background-color: #fff;
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  input:checked + .slider {
+}
+
+input:checked+.slider {
     background-color: var(--clr-primary);
-  }
-  
-  input:focus + .slider {
+}
+
+input:focus+.slider {
     box-shadow: 0 0 1px var(--clr-primary);
-  }
-  
-  input:checked + .slider:before {
+}
+
+input:checked+.slider:before {
     -webkit-transform: translateX(22px);
     -ms-transform: translateX(22px);
     transform: translateX(22px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
+}
+
+.slider.round {
     border-radius: 34px;
-  }
-  
-  .slider.round:before {
+}
+
+.slider.round:before {
     border-radius: 50%;
-  }
+}
 
 .menu-btn {
     font-size: 1.5rem;
@@ -205,59 +313,142 @@ body {
     gap: 2rem;
 }
 
-.a-section {
+
+.showcase {
+    padding-top: 6rem;
+    text-align: center;
+    background-color: var(--clr-bg);
+    background-image: linear-gradient(to top, rgba(99, 101, 241, 0.10), rgba(219, 70, 239, 0.05) 42%, rgba(241, 244, 253, 0.07) 83%);
     width: 100%;
-    padding: 3rem;
-    display: block;
-    /* align-items: center; */
-    /* justify-content: center; */
+    margin: 0 .5rem;
+    display: flex;
+    flex-direction: column;
 }
 
-.expand {
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
-    background-color: #fff;
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    padding-bottom: var(--section-spacing);
 }
 
-.store-button {
-    background-color: var(--clr-gray900);
-    width: 366.4px;
-    height: 50.41px;
-    border-radius: .8rem;
-    display: block;
+.store-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: .5rem;
     cursor: pointer;
-    margin: 0 auto;
-    
+
     img {
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
+        height: 3em;
+    }
+
+}
+
+.store-btn {
+    background-color: var(--clr-gray900);
+    width: 100%;
+    padding: .5em 1em;
+    border-radius: var(--br-l);
+
+
+}
+
+.more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+}
+
+.phones-img {
+    display: none;
+}
+
+@media (width > 768px) {
+    .container {
+        position: relative;
+    }
+
+    .content {
+        margin-top: 6rem;
+        width: 45%;
+        text-align: start;
+    }
+
+    .store-buttons {
+        flex-direction: row;
+    }
+
+    .store-btn {
+        padding: 0 1em;
+    }
+
+    .more {
+        justify-content: flex-start;
+    }
+
+    .phones-img {
+        display: block;
+        width: 60%;
+
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+}
+
+@media (width > 992px) {
+    .store-btn {
+        padding: .5em 2em;
+    }
+
+    .more {
+        margin-top: 11rem;
     }
 }
 
+@media (width > 1200px) {
+    padding-top: 10rem;
+    text-align: start;
+
+    h1 {
+        width: 50%;
+    }
+
+    .content {
+        width: 40%;
+        margin-top: 2rem;
+    }
+}
 
 
 @media (width > 768px) {
-.darkmode-switch .text-label {
-    display: block;
+    .darkmode-switch .text-label {
+        display: block;
     }
-.main-nav .right {
-    gap: 4rem;
-}
+
+    .main-nav .right {
+        gap: 4rem;
+    }
 }
 
 @media (width > 1400px) {
     .menu-btn {
         display: none;
     }
+
     .nav-link,
-    .main-nav .btn-primary  {
+    .main-nav .btn-primary {
         display: block;
     }
+
     .main-nav .right {
         gap: 2rem;
     }
-   
+
 
 }

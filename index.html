@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <nav class="main-nav">
@@ -24,7 +26,7 @@
                     <label class="switch">
                         <input type="checkbox">
                         <span class="slider round"></span>
-                      </label>
+                    </label>
                 </div>
                 <a href="#" class="btn btn-primary">
                     <i class="fa-regular fa-user"></i>
@@ -34,32 +36,40 @@
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
-            
+
         </div>
     </nav>
 
-    <main>
-        <section class="a-section bg-image container">
-        <h1 class="align-center">Manage All Your</br>Money In One App</h1>
-        <p class="p-text">We offer you a new generation of the mobile banking. Save, spend & manage money in your pocket.   
-        </p>
-        <div class="store-button align-center">
-            <a href="#">
-                <img class="store-btn" src="/images/appstore-dark.svg" alt="download on the app store">
-            </a>
-        </div>
-        <div class="store-button align-center">
-            <a href="#">
-                <img class="store-btn" src="/images/googleplay-dark.svg" alt="download on the app store">
-            </a>
-        </div>
-        <div class="expand flex">
-            <a href="#">
-                <img class="align-center" src="/images/expand-icon.png">
-            </a>
-        <!-- <p class="p-text">Discover more.</p> -->
-                
-        </div>
+    <main id="main">
+        <section aria-label="showcase" class="showcase">
+            <div class="container space-y-3">
+                <h1 class="d4">Manage All Your Money In One App</h1>
+                <div class="content space-y-3">
+                    <p class="text-lg">We offer you a new generation of the mobile banking. Save, spend & manage money
+                        in
+                        your pocket.
+                    </p>
+                    <div class="store-buttons">
+                        <a href="#">
+                            <span class="sr-only">Download on the app store</span>
+                            <img src="/images/appstore-light.svg" class="store-btn">
+                        </a>
+                        <a href="#">
+                            <span class="sr-only">Get it on google play</span>
+                            <img src="/images/googleplay-light.svg" class="store-btn">
+                        </a>
+                    </div>
+                        <div class="more">
+                            <a href="#features" class="btn-round btn-white">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <span>Discover more</span>
+                        </div>
+                    </div>
+                    <div class="phones-img">
+                        <img src="/images/phones-image.png" alt="two iphones with charts and a credit-card on screen">
+                    </div>
+            </div>
         </section>
 
 
@@ -70,6 +80,7 @@
 
     </footer>
 
-  
+
 </body>
+
 </html>
