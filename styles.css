@@ -219,7 +219,8 @@ body {
 }
 
 .nav-link {
-    color: var(--clr-gray800) font-weight: 600;
+    color: var(--clr-gray800);
+    font-weight: 600;
     text-decoration: none;
 }
 
@@ -229,7 +230,8 @@ body {
 }
 
 .darkmode-switch .text-label {
-    color: var(--clr-gray700) font-weight: 600;
+    color: var(--clr-gray700);
+    font-weight: 600;
 }
 
 .nav-link,
@@ -323,6 +325,77 @@ input:checked+.slider:before {
     margin: 0 .5rem;
     display: flex;
     flex-direction: column;
+    
+    @media (width > 768px) {
+        .container {
+            position: relative;
+        }
+    
+        .content {
+            margin-top: 6rem;
+            width: 45%;
+            text-align: start;
+        }
+    
+        .store-buttons {
+            flex-direction: row;
+        }
+    
+        .store-btn {
+            padding: 0 1em;
+        }
+    
+        .more {
+            justify-content: flex-start;
+        }
+    
+        .phones-img {
+            display: block;
+            width: 60%;
+    
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    
+    }
+    
+    @media (width > 992px) {
+        .store-btn {
+            padding: .5em 2em;
+        }
+    
+        .more {
+            margin-top: 11rem;
+        }
+    }
+    
+    @media (width > 1200px) {
+        padding-top: 10rem;
+        text-align: start;
+    
+        h1 {
+            width: 50%;
+        }
+
+        .more {
+            margin-top: 13rem;
+        }
+    
+        .content {
+            width: 40%;
+            margin-top: 2rem;
+        }
+    }
+    @media (width > 1400px) {
+        padding-top: 15rem;
+        .more {
+            margin-top: 15rem;
+        }
+
+    }
+    
+
 }
 
 .content {
@@ -367,63 +440,6 @@ input:checked+.slider:before {
     display: none;
 }
 
-@media (width > 768px) {
-    .container {
-        position: relative;
-    }
-
-    .content {
-        margin-top: 6rem;
-        width: 45%;
-        text-align: start;
-    }
-
-    .store-buttons {
-        flex-direction: row;
-    }
-
-    .store-btn {
-        padding: 0 1em;
-    }
-
-    .more {
-        justify-content: flex-start;
-    }
-
-    .phones-img {
-        display: block;
-        width: 60%;
-
-        position: absolute;
-        bottom: 0;
-        right: 0;
-    }
-
-}
-
-@media (width > 992px) {
-    .store-btn {
-        padding: .5em 2em;
-    }
-
-    .more {
-        margin-top: 11rem;
-    }
-}
-
-@media (width > 1200px) {
-    padding-top: 10rem;
-    text-align: start;
-
-    h1 {
-        width: 50%;
-    }
-
-    .content {
-        width: 40%;
-        margin-top: 2rem;
-    }
-}
 
 
 @media (width > 768px) {
