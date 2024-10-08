@@ -15,7 +15,8 @@
         <div class="container flex align-center">
             <div class="left flex align-center">
                 <a href="/">
-                    <img src="/images/logo.svg" alt="silicon logotype">
+                    <img src="/images/logo.svg" class="show-light" alt="silicon logotype">
+                    <img src="/images/logo-darkmode.svg" class="show-dark" alt="silicon logotype">
                 </a>
                 <a class="nav-link" href="#">Features</a>
 
@@ -24,7 +25,7 @@
                 <div class="darkmode-switch flex align-center">
                     <span class="text-label">Dark Mode</span>
                     <label class="switch">
-                        <input type="checkbox">
+                        <input type="checkbox" id="darkmode-switch">
                         <span class="slider round"></span>
                     </label>
                 </div>
@@ -52,11 +53,13 @@
                     <div class="store-buttons">
                         <a href="#">
                             <span class="sr-only">Download on the app store</span>
-                            <img src="/images/appstore-light.svg" class="store-btn">
+                            <img src="/images/appstore-light.svg" class="store-btn show-light">
+                            <img src="/images/appstore-dark.svg" class="store-btn show-dark">
                         </a>
                         <a href="#">
                             <span class="sr-only">Get it on google play</span>
-                            <img src="/images/googleplay-light.svg" class="store-btn">
+                            <img src="/images/googleplay-light.svg" class="store-btn show-light">
+                            <img src="/images/googleplay-dark.svg" class="store-btn show-dark">
                         </a>
                     </div>
                     <div class="more">
@@ -200,7 +203,7 @@
 
     </footer>
 
-
+    <script src="darkmode.js"></script>
 </body>
 
 </html>

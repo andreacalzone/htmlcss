@@ -28,7 +28,28 @@
 
     --section-spacing: 3rem;
 
+    --clr-market-btn: var(--clr-gray900);
+
 }
+.dark {
+    --clr-bg: var(--clr-gray900);
+    --clr-bg-100: rgba(255, 255, 255, 0.04);
+    --clr-text-body: rgba(255, 255, 255, 0.7);
+    --clr-text-heading: #fff;
+    --clr-text-nav: #fff;
+    --clr-logo-bg: rgba(99, 101, 241, 0.08);
+    --white-to-gray: rgba(255, 255, 255, 0.05);
+    --clr-market-btn: var(--clr-gray100);
+
+    color-scheme: dark;
+
+    .show-light { display: none; }
+    .show-dark { display: block; }
+
+}
+
+.show-light { display: block; }
+.show-dark { display: none; }
 
 *,
 *::before,
@@ -36,6 +57,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+html {
+    color-scheme: light;
 }
 
 input,
@@ -414,6 +439,7 @@ input:checked+.slider:before {
     
         h1 {
             width: 50%;
+            text-align: left;
         }
 
         .more {
@@ -458,7 +484,7 @@ input:checked+.slider:before {
 }
 
 .store-btn {
-    background-color: var(--clr-gray900);
+    background-color: var(--clr-market-btn);
     width: 100%;
     padding: .5em 1em;
     border-radius: var(--br-l);
