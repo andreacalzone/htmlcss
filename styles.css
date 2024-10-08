@@ -577,6 +577,37 @@ input:checked+.slider:before {
     }
 }
 
+.carousel-section {
+    padding-block: var(--section-spacing);
+    background-color: var(--clr-bg-100);
+    text-align: center;
+
+    .carousel {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .text {
+        max-width: 70ch;
+        margin-inline: auto;
+    }
+
+    .carousel-item:first-of-type,
+    .carousel-item:nth-of-type(2),
+    .carousel-item:nth-of-type(3) {
+        display: none;
+    }
+
+    @media (width >= 768px) {
+        .carousel-item:first-of-type,
+        .carousel-item:nth-last-of-type(2),
+        .carousel-item:nth-last-of-type(3) {
+        display: block;
+    }
+    .carousel-item:last-of-type {
+        display: none;
+    }
+}
 
 
 
