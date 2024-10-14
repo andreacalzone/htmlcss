@@ -29,6 +29,7 @@
     --section-spacing: 3rem;
 
     --clr-market-btn: var(--clr-gray900);
+    --clr-btn-accordion: var(--clr-gray100);
 
 }
 
@@ -41,6 +42,7 @@
     --clr-logo-bg: rgba(99, 101, 241, 0.08);
     --white-to-gray: rgba(255, 255, 255, 0.05);
     --clr-market-btn: var(--clr-gray100);
+    --clr-btn-accordion: #131022;
 
     color-scheme: dark;
 
@@ -662,6 +664,109 @@ input:checked+.slider:before {
             display: none;
         }
     }
+}
+
+.faq-section {
+    display: flex;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    background-color: var(--white-to-gray);
+    align-items: center;
+    text-align: center;
+    gap: 10r;
+
+    .accordion {
+        width: 100%;
+        max-width: 600px;
+        margin: 2rem auto;
+      }
+      
+      .accordion-item {
+        border: 1px solid var(--clr-gray300);
+        border-radius: var(--br-l);
+      }
+      
+      .accordion-header {
+        background-color: transparent;
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        text-align: left;
+        cursor: pointer;
+        position: relative;
+      }
+      
+      
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 1rem;
+        background-color: var(--white-to-gray);
+        transition: max-height 0.3s ease;
+      }
+      
+      .accordion-content p {
+        padding: 1rem 0;
+      }
+      
+      .accordion-item.active .accordion-content {
+        max-height: auto;
+      }
+      
+      /* Button and chevron styles */
+      .btn-round {
+        border-radius: 50%;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: none;
+      }
+      
+      .btn-white {
+        background-color: var(--clr-btn-accordion);
+        width: 6%;
+        border: 0;
+        color: var(--clr-gray900);
+      }
+      
+      .chevron {
+        position: absolute;
+        font-size: .8rem;
+        color: var(--clr-market-btn);
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+      
+      .chevron i {
+        transition: transform 0.3s ease;
+      }
+      
+      /* Rotate chevron and change background color when active */
+      .accordion-item.active .chevron {
+        background-color: var(--clr-primary); /* Custom variable color */
+      }
+      
+      .accordion-item.active .chevron i.fa-chevron-down {
+        display: none;
+      }
+      
+      .accordion-item.active .chevron i.fa-chevron-up {
+        display: block;
+        color: white; /* Ensures the up-chevron is white */
+      }
+      
+      /* Show the down-chevron by default and hide the up-chevron */
+      .chevron i.fa-chevron-up {
+        display: none;
+      }
+      
+        
 }
 
 .subscribe {
