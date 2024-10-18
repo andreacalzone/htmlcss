@@ -670,6 +670,136 @@ input:checked+.slider:before {
     }
 }
 
+
+.transfer-section {
+    display: none;
+}
+
+.transfer-section .container {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.upper-transfer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    gap: 2rem;
+}
+.upper-transfer .ul {
+    padding-bottom: 5rem;
+}
+
+.upper-transfer .btn,
+.lower-transfer .btn {
+    width: 160px;
+    height: 50px;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.transfer-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    width: 50%;
+}
+
+.transfer-text h3 {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.transfer-text ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.transfer-text li {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.transfer-icon {
+    width: 17px;
+    height: 17px;
+}
+
+.transfer-img {
+    width: 50%;
+    text-align: right;
+}
+
+.lower-transfer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.lower-transfer .transfer-text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.lower-transfer .bt-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.lower-transfer h3 {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.bt-left,
+.bt-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 48%; 
+}
+
+.bt-left img,
+.bt-right img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.bt-left p,
+.bt-right p {
+    text-align: left;
+}
+
+.lower-transfer .transfer-img {
+    width: 50%;
+    height: auto;
+    align-items: left;
+    aspect-ratio: 1;
+}
+
+@media (min-width: 1400px) {
+    .transfer-section {
+        display: block;
+    }
+}
+
+
+
+
 .faq-section {
     padding: 0 .5rem;
     padding-top: 3rem;
