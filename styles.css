@@ -26,6 +26,8 @@
     --br-m: 0.375em;
     --br-l: 0.5em;
 
+    --box-shadow: #00000022;
+
     --white-to-gray: #fff;
 
     --section-spacing: 3rem;
@@ -101,6 +103,12 @@ h6 {
 
 .h1 {
     font-size: 2.5rem;
+    color: var(--clr-text-heading);
+    font-weight: 800;
+}
+
+.h2 {
+    font-size: 2rem;
     color: var(--clr-text-heading);
     font-weight: 800;
 }
@@ -262,7 +270,7 @@ body {
     background-color: var(--white-to-gray);
     color: var(--clr-text-nav);
 
-    box-shadow: 0 0 10px #00000022, 3px 5px 4px #0000001f;
+    box-shadow: 0 0 10px var(--box-shadow);
 
     &:hover,
     &:focus-visible {
@@ -588,8 +596,8 @@ input:checked+.slider:before {
         gap: 1rem;
         align-items: flex-start;
 
-        h2 {
-            text-align: left;
+        h3 {
+            text-align: center;
         }
     }
 
@@ -624,6 +632,9 @@ input:checked+.slider:before {
         }
 
         .text h2 {
+            text-align: left;
+        }
+        .feature-card h3 {
             text-align: left;
         }
     }
@@ -826,10 +837,11 @@ input:checked+.slider:before {
         position: relative;
         display: flex;
         flex-direction: column;
+        border-radius: var(--br-l);
         justify-content: flex-start;
         background-color: var(--white-to-gray);
         padding: 1rem;
-        box-shadow: 0 0 10px #00000022;
+        box-shadow: 0 0 10px var(--box-shadow);
         width: 30%;
         margin-right: 1rem;
     }
@@ -913,7 +925,15 @@ input:checked+.slider:before {
         padding: 0 1rem;
     }
 
-    .contact-section,
+    .contact-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        place-items: center;
+        margin: 0;
+        text-align: center;
+    }
     .contact-section-2 {
         display: flex;
         flex-direction: column;
@@ -1015,7 +1035,15 @@ input:checked+.slider:before {
         display: none;
     }
 
-    .contact-us-desktop,
+    .contact-us-desktop {
+        display: none;
+        flex-direction: row;
+        margin: 0;
+        gap: 2rem;
+        padding: 0;
+        width: 40%;
+        align-items: flex-start;
+    }
     .contact-us-tablet {
         display: none;
         flex-direction: row;
@@ -1044,7 +1072,8 @@ input:checked+.slider:before {
         flex-direction: column;
         border: 1px solid var(--clr-gray300);
         border-radius: var(--br-l);
-        padding: 2rem 2rem;
+        padding: 2rem;
+        margin-left: 0;
         width: 250px;
         height: 200px;
     }
@@ -1076,7 +1105,7 @@ input:checked+.slider:before {
 
     @media (width > 768px) {
         .accordion-item {
-            box-shadow: 0 0 10px #00000022;
+            box-shadow: 0 4px 10px var(--box-shadow);
             margin-bottom: .5rem;
         }
 
@@ -1105,10 +1134,11 @@ input:checked+.slider:before {
         .container {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: flex-start;
             text-align: left;
             margin: 0 auto;
+            width: 100%;
         }
 
         .accordion {
@@ -1120,8 +1150,11 @@ input:checked+.slider:before {
         .contact-section {
             display: flex;
             flex-direction: column;
-            /* width: 50%; */
-        }
+            align-items: flex-start;
+            margin: 2rem 0;
+            text-align: left;
+            width: 40%;
+    }
 
         .contact-us-tablet,
         .contact-section-2 {
@@ -1131,24 +1164,33 @@ input:checked+.slider:before {
         .contact-us-desktop {
             display: flex;
             justify-content: flex-start;
+            align-items: flex-start;
             text-align: left;
-            width: 60%;
+            width: 40%;
             margin-left: 0;
             flex-direction: row;
             gap: 1.5rem;
+            margin-right: 2rem;
         }
 
         .contact-card {
-            width: 100%;
+            width: 200px;
             aspect-ratio: 1.2;
+            text-align: left;
+        }
+        .h2 {
+            text-align: left;
+        }
+        .accordion {
+            width: 60%;
         }
     }
 
 }
 
 .subscribe {
-    background-color: var(--clr-bg-100);
-    border-radius: var(--br-l);
+    
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1160,6 +1202,8 @@ input:checked+.slider:before {
 
     .container {
         margin: 0;
+        background-color: var(--clr-bg-100);
+        border-radius: var(--br-l);
     }
 
     .big-h2 {
