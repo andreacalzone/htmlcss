@@ -584,7 +584,7 @@ input:checked+.slider:before {
 
     .feature-card {
         display: flex;
-        text-align: start;
+        text-align: flex-start;
         gap: 1rem;
         align-items: flex-start;
 
@@ -798,6 +798,100 @@ input:checked+.slider:before {
         display: block;
     }
 }
+
+.clients-testimonial {
+    display: none;
+    padding-block: var(--section-spacing);
+    background-color: var(--clr-bg-100);
+    
+    .container {
+        width: 100%;
+    }
+
+    .clients-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-block: 4rem;
+        width: 100%;
+    }
+
+    .h1 {
+        flex: 1;
+        text-align: left;
+        margin-right: 2rem;
+    }
+
+    .client-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: var(--white-to-gray);
+        padding: 1rem;
+        box-shadow: 0 0 10px #00000022;
+        width: 30%;
+        margin-right: 1rem;
+    }
+
+    .client-card:last-child {
+        margin-right: 0;
+    }
+
+    .quotes {
+        position: absolute;
+        top: -20px;
+        left: 0.5rem;
+        width: 44px;
+        height: 44px;
+    }
+
+    .img-rating {
+        padding-top: 1.5rem;
+        width: 88px;
+        align-self: left;
+        margin-bottom: 1rem;
+    }
+
+    .text-lg {
+        text-align: left;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .avatar-card {
+        display: flex;
+        align-items: left;
+        
+        img {
+            width: 50px;
+            height: auto;
+            margin-right: 1rem;
+        }
+
+        .client {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .client-name {
+                font-weight: 800;
+                font-size: 1rem;
+            }
+
+            .client-title {
+                font-weight: 300;
+                font-size: 0.8rem;
+                color: var(--clr-text-muted);
+            }
+        }
+    }
+
+    @media (min-width: 1400px) {
+        display: block;
+    }
+}
+
 
 
 
