@@ -30,7 +30,7 @@
 
     --white-to-gray: #fff;
 
-    --section-spacing: 3rem;
+    --section-spacing: 5rem;
 
     --clr-market-btn: var(--clr-gray900);
     --clr-btn-accordion: var(--clr-gray100);
@@ -81,6 +81,11 @@ html {
     scroll-behavior: smooth;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 input,
 button,
 textarea,
@@ -126,7 +131,7 @@ h6 {
 }
 
 .d4 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: var(--clr-text-heading);
     font-weight: 800;
 }
@@ -190,6 +195,7 @@ body {
 
 .container {
     width: 100%;
+    max-width: 100%;
     margin-inline: auto;
     overflow-x: hidden;
 
@@ -209,6 +215,11 @@ body {
         max-width: 1320px;
     }
 
+}
+.main {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .main-nav .container {
@@ -255,7 +266,7 @@ body {
 
 .btn-round {
     display: flex;
-    width: 50px;
+    width: 40px;
     aspect-ratio: 1;
     border-radius: 50%;
     align-items: center;
@@ -283,7 +294,9 @@ body {
     padding-block: 1rem;
     position: absolute;
     width: 100%;
+    max-width: 100%;
     top: 0;
+    overflow: hidden;
 }
 
 .main-nav .container {
@@ -398,6 +411,7 @@ input:checked+.slider:before {
     background-color: var(--clr-bg);
     background-image: linear-gradient(to top, rgba(99, 101, 241, 0.10), rgba(219, 70, 239, 0.05) 42%, rgba(241, 244, 253, 0.07) 83%);
     width: 100%;
+    padding-inline: .3rem;
     margin: 0 .5rem;
     display: flex;
     flex-direction: column;
@@ -499,7 +513,7 @@ input:checked+.slider:before {
     flex-direction: column;
     width: 100%;
     gap: 2rem;
-    padding-bottom: var(--section-spacing);
+    padding-bottom: 3rem;;
 }
 
 .store-buttons {
@@ -578,7 +592,8 @@ input:checked+.slider:before {
 
 .features {
     text-align: center;
-    padding-block: var(--section-spacing);
+    padding-top: 3rem;
+    padding-bottom: var(--section-spacing);
 
     .iphone {
         display: none;
@@ -983,6 +998,7 @@ input:checked+.slider:before {
 
     .accordion-content p {
         padding: 1rem 0;
+        padding-bottom: 2rem;
     }
 
     .accordion-item.active .accordion-content {
@@ -991,7 +1007,7 @@ input:checked+.slider:before {
 
     .btn-round {
         border-radius: 50%;
-        padding: .2rem;
+        padding: .1rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1139,6 +1155,7 @@ input:checked+.slider:before {
             text-align: left;
             margin: 0 auto;
             width: 100%;
+            padding-top: 2rem;
         }
 
         .accordion {
@@ -1154,6 +1171,7 @@ input:checked+.slider:before {
             margin: 2rem 0;
             text-align: left;
             width: 40%;
+            gap: .4rem;
     }
 
         .contact-us-tablet,
@@ -1197,8 +1215,7 @@ input:checked+.slider:before {
     align-items: center;
     margin: 2rem 1rem;
     width: calc(100% - 2rem);
-    padding-top: var(--section-spacing);
-    padding-bottom: var(--section-spacing);
+    
 
     .container {
         margin: 0;
@@ -1208,6 +1225,7 @@ input:checked+.slider:before {
 
     .big-h2 {
         display: none;
+        font-size: 1.5rem;
     }
 
     .subscribe-control {
@@ -1220,20 +1238,22 @@ input:checked+.slider:before {
         margin: 0;
         width: 100%;
         box-sizing: border-box;
+        padding-block: 3rem;
     }
 
     .subscribe-card {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 2rem;
+        gap: 1rem;
         width: 100%;
 
         img {
-            width: auto;
+            width: 100px;
+            height: 100px;
         }
 
-        h2 {
+        h3 {
             text-align: left;
             font-weight: bold;
             line-height: 1.8875rem;
@@ -1264,15 +1284,15 @@ input:checked+.slider:before {
     .form-input {
         border: 1px solid var(--clr-gray400);
         color: var(--clr-gray500);
-        padding: 1rem 2rem;
-        font-size: 1.2rem;
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
         height: 100%;
     }
 
     .form-input:focus {
         outline: none;
         border-color: var(--clr-primary);
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 4px 4px var(--box-shadow);
         /* Drop shadow effect */
     }
 
@@ -1294,12 +1314,24 @@ input:checked+.slider:before {
     @media (width >=768px) {
         .subscribe-control {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             flex-direction: row;
-            padding: 2rem;
             text-align: left;
-            vertical-align: middle;
+            padding-inline: 2rem;
+            /* vertical-align: middle; */
             /* gap: 2rem; */
+        }
+    
+    
+        .input-group {
+            width: 100%; /* Make sure input and button don't get too wide */
+        }
+        .form-input {
+            width: 100%;
+        }
+    
+        .btn {
+            width: auto;
         }
     }
 
@@ -1324,13 +1356,21 @@ input:checked+.slider:before {
             align-items: center;
             gap: 2rem;
         }
+        .input-group {
+            max-width: 100%;
+        }
     }
 }
 
 footer {
+    box-sizing: border-box;
+    padding-block: 1rem;
     text-align: center;
     color: var(--clr-gray600);
     font-size: .875rem;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 
